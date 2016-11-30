@@ -10,13 +10,15 @@ import { CommentService } from '../comment.service';
 })
 
 export class CommentListComponent implements OnInit {
-  comments: Comment[];
+  comments: Comment[] = [];
 
-  constructor(
-    private commentService: CommentService
-  ) {}
+  constructor(private commentService: CommentService) {}
 
-  ngOnInit() {
-    this.commentService.getAllComments().then(comments => this.comments = comments);
+  ngOnInit(): void {
+    this.commentService.getAllComments()
+    .then(comments => {
+      console.log(comments);
+      this.comments = comments;
+    });
   }
 }
