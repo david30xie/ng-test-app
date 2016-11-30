@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { CommentViewComponent } from './comment-view/comment-view.component';
 
+import { CommentService } from './comment.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { CommentViewComponent } from './comment-view/comment-view.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CommentService ],
+  bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }

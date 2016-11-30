@@ -1,3 +1,6 @@
-<p>
-  comment-list works!
-</p>
+<ul>
+  <li *ngFor="let comment of comments">
+    <h2>{{ comment.author }}</h2>
+    <p>{{ comment.text }}</p>
+  </li>
+</ul>
