@@ -17,7 +17,6 @@ export class CommentListComponent implements OnInit {
   ngOnInit(): void {
     this.commentService.getAllComments()
     .then(comments => {
-      console.log(comments);
       this.comments = comments;
     });
   }

@@ -1,6 +1,9 @@
-<ul>
+<h2>Comments List</h2>
+<ul class="commnet-list">
   <li *ngFor="let comment of comments">
-    <h2>{{ comment.author }}</h2>
-    <p>{{ comment.text }}</p>
+    <a routerLink="/comments/{{ comment.id }}">
+      <h2>{{ comment.author }}</h2>
+      <p>{{ comment.text }}</p>
+    </a>
   </li>
 </ul>

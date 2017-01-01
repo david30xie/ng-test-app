@@ -26,7 +26,6 @@ def comment(comment_id):
     comment = None
     for i in comments:
         if str(i['id']) == str(comment_id):
-            print i['id']
             comment = i
             break
     if not comment:

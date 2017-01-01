@@ -15,13 +15,16 @@ export class CommentService {
   //                                'Access-Control-Allow-Origin': '*'});
 
   getAllComments(): Promise<Comment[]> {
-    // return this.http.get(this.commentsUrl)
-    //            .toPromise()
-    //            .then(response => response.json().data as Comment[])
-    //            .catch(this.handleError);
     return this.http.get(this.commentsUrl)
                .toPromise()
-               .then(response => response.json().data as Comment[])
+               .then(response => response.json() as Comment[])
+               .catch(this.handleError);
+  }
+
+  getCommentById(commentId: number): Promise<Comment> {
+    return this.http.get(this.commentsUrl + '/' + commentId)
+               .toPromise()
+               .then(response => response.json() as Comment)
                .catch(this.handleError);
   }
 
