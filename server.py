@@ -43,18 +43,25 @@ def comments():
     with open('comments.json') as f:
         comments = json.loads(f.read())
 
-    if request.method == 'POST':
-        new_comment = dict(author=request.forms['author'],
-                           text=request.forms['text'])
-        new_comment['id'] = int(time.time() * 1000)
-        comments.append(new_comment)
-
-        with open('comments.json', 'w') as f:
-            f.write(json.dumps(comments, indent=4, separators=(',', ': ')))
-
     response.set_header('Cache-Control', 'no-cache')
     response.set_header('Access-Control-Allow-Origin', '*')
     response.content_type = 'application/json'
+
+    if request.method == 'POST':
+        if set(request.json.keys()) != set(['author', 'text', 'title']):
+            abort(500)
+
+        new_comment = dict(author=request.json['author'],
+                           title=request.json['title'],
+                           text=request.json['text'])
+        new_comment['id'] = int(time.time() * 1000)
+        
+        comments.append(new_comment)
+        with open('comments.json', 'w') as f:
+            f.write(json.dumps(comments, indent=4, separators=(',', ': ')))
+
+        return json.dumps(new_comment)
+
     return json.dumps(comments)
 
 run(host='localhost', port=3000)

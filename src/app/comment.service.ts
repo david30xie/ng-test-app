@@ -28,6 +28,13 @@ export class CommentService {
                .catch(this.handleError);
   }
 
+  createComment(model: Comment): Promise<Boolean> {
+    return this.http.post(this.commentsUrl, model)
+               .toPromise()
+               .then(response => response.json() as Boolean)
+               .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

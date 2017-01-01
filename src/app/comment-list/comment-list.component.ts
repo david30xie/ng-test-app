@@ -4,7 +4,6 @@ import { Comment } from '../comment';
 import { CommentService } from '../comment.service';
 
 @Component({
-  selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
   styleUrls: ['./comment-list.component.css']
 })
