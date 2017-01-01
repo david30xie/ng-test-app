@@ -28,10 +28,10 @@ export class CommentService {
                .catch(this.handleError);
   }
 
-  createComment(model: Comment): Promise<Boolean> {
+  createComment(model: Comment): Promise<Comment> {
     return this.http.post(this.commentsUrl, model)
                .toPromise()
-               .then(response => response.json() as Boolean)
+               .then(response => response.json() as Comment)
                .catch(this.handleError);
   }
 

@@ -34,5 +34,17 @@
         "title": "new Comment from NG2",
         "id": 1483305290047,
         "author": "ddd"
+    },
+    {
+        "text": "comment2 from ng2",
+        "author": "David",
+        "id": 1483307853144,
+        "title": "comment2 from ng2"
+    },
+    {
+        "text": "comment3 from NG2",
+        "title": "comment3 from NG2",
+        "id": 1483307946017,
+        "author": "David"
     }
 ]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Comment } from '../comment';
 import { CommentService } from '../comment.service';
@@ -17,10 +18,12 @@ export class CommentCreateComponent implements OnInit {
   submitted = false;
 
   onSubmit() {
-    this.commentService.createComment(this.comment);
+    this.commentService.createComment(this.comment)
+      .then(comment => this.router.navigate(['/comments', comment.id]));
   }
 
-  constructor(private commentService: CommentService,) { }
+  constructor(private commentService: CommentService,
+              private router: Router) { }
 
   ngOnInit() {
   }
