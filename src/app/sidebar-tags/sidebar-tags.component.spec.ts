@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CommentViewComponent } from './comment-view.component';
+import { SidebarTagsComponent } from './sidebar-tags.component';
 
-describe('CommentViewComponent', () => {
-  let component: CommentViewComponent;
-  let fixture: ComponentFixture<CommentViewComponent>;
+describe('SidebarTagsComponent', () => {
+  let component: SidebarTagsComponent;
+  let fixture: ComponentFixture<SidebarTagsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentViewComponent ]
+      declarations: [ SidebarTagsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommentViewComponent);
+    fixture = TestBed.createComponent(SidebarTagsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

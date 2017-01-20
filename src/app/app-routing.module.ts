@@ -1,15 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { CommentListComponent } from './comment-list/comment-list.component';
-import { CommentViewComponent } from './comment-view/comment-view.component';
-import { CommentCreateComponent } from './comment-create/comment-create.component';
+import { PasteListComponent } from './paste-list';
+import { PasteViewComponent } from './paste-view';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/comments', pathMatch: 'full' },
-  { path: 'comments', component: CommentListComponent },
-  { path: 'comments/create', component: CommentCreateComponent },
-  { path: 'comments/:commentId', component: CommentViewComponent }
+  { path: '', redirectTo: '/pastes', pathMatch: 'full' },
+  { path: 'pastes/:hashId', component: PasteViewComponent },
+  { path: 'pastes', component: PasteListComponent }
 ]
 
 @NgModule({

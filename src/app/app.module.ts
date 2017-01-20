@@ -1,25 +1,25 @@
 import './rxjs-extensions';
 
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommentListComponent } from './comment-list/comment-list.component';
-import { CommentViewComponent } from './comment-view/comment-view.component';
-import { CommentCreateComponent } from './comment-create/comment-create.component';
+import { PasteListComponent } from './paste-list';
 
-import { CommentService } from './comment.service';
-
+import { PastesService } from './pastes.service';
+import { TagsService } from './tags.service';
+import { PasteViewComponent } from './paste-view/paste-view.component';
+import { SidebarTagsComponent } from './sidebar-tags/sidebar-tags.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentListComponent,
-    CommentViewComponent,
-    CommentCreateComponent
+    PasteListComponent,
+    PasteViewComponent,
+    SidebarTagsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +27,7 @@ import { CommentService } from './comment.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ CommentService ],
+  providers: [ PastesService, TagsService, Title ],
   bootstrap: [ AppComponent ]
 })
 

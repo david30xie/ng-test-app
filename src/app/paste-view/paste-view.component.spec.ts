@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CommentCreateComponent } from './comment-create.component';
+import { PasteViewComponent } from './paste-view.component';
 
-describe('CommentCreateComponent', () => {
-  let component: CommentCreateComponent;
-  let fixture: ComponentFixture<CommentCreateComponent>;
+describe('PasteViewComponent', () => {
+  let component: PasteViewComponent;
+  let fixture: ComponentFixture<PasteViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentCreateComponent ]
+      declarations: [ PasteViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommentCreateComponent);
+    fixture = TestBed.createComponent(PasteViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
